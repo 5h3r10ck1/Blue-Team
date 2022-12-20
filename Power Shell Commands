@@ -1,0 +1,4 @@
+Get Nested AD Groups
+  Get-ADGroupMember "AD_GROUP" | ?{$_.ObjectClass -eq "Group"} | %{Write-Host $_.Name;Get-ADGroupMember $_ | Get-ADUser -Properties Title, department | ft name, title, department -AutoSize} >  C:\full_path
+  
+
